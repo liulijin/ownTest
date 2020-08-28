@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+   <title>Document</title>
+   <!-- <style>
+      div {
+         width: 400px;
+         height: 400px;
+         margin: 0 auto;
+         border: 1px solid rgb(255, 252, 53);
+         /* background:rgb(138, 111, 115); */
+      }
+   </style> -->
+</head>
+
+<body>
+   <!-- <div class="toper text-black-50">
+      <div class="toper-center container d-flex bd-highlight mb-3" >
+         <div class="nav-item disabled mr-auto p-2 bd-highlight">您好，欢迎来到潮男购物网站！</div>
+         <ul class="nav justify-content-end p-2 bd-highlight">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">请登录</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#">免费注册</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" >用QQ账号登录</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">用微博账号登录</a>
+            </li>
+          </ul>
+      </div>
+   </div> -->
+
+
+   <!-- ul>li*10{$} -->
+
+   <!-- <div></div> -->
+   <!-- <div class="box"></div> -->
+   <script>
+      // 请给数组类型定义一个方法getmin()，该方法功能为返回当前数组最小值，
+      // 调用如：var arr=[1,2,3,4]; var arrmin=arr.getmin(); arrmin得到结果为1，请定义此方法
+      var arr = [1, 2, 3, 4, 5];
+      function Arr(ele){
+         this.data = ele;
+      }
+      arr.prototype.getmin = function () {
+         var min = this[0];
+         var len = this.length;
+         for (var i = 1; i < len; i++) {
+            if (this[i] < min) {
+               min = this[i];
+            }
+         }
+         return min;
+      }
+      var arr = new Arr();
+
+      var arrmin=arr.getmin();
+      console.log(arrmin);
+
+
+
+
+         // var number = 2;
+         // var obj = {
+         //    number: 4,
+         //    // 3、函数自调用
+         //    // 8、定义函数
+         //    fn1: (function () {
+         //       // 4、this指向window,window.number = 4
+         //       this.number *= 2; 
+         //       // 5、函数内number没被定义，所以为undefined,number = NAN
+         //       number = number * 2; 
+         //       // 6、函数内number声明赋值为3
+         //       var number = 3; 
+         //       // 7、返回一个函数
+         //       return function () {
+         //          // 12、函数自调用，this指向window,number = 8
+         //          // 17、obj调用，this指向obj,number = 4*2 = 8
+         //          this.number *= 2; 
+         //          // 13、number本函数没有声明，去上一个作用域查找，number = 9
+         //          // 18、number = 9*3 = 27
+         //          number *= 3;
+         //          // 14、返回number = 9
+         //          // 19、返回number 27
+         //          alert(number);
+         //       }
+         //    })(),  // fn1:
+         //    fn2: function () {
+         //       // 22、obj调用，this指向obj，number = 8*2 = 16
+         //       this.number *= 2;
+         //    }
+         // };
+         // // 9、fn1被赋值为obj.fn1的函数地址
+         // var fn1 = obj.fn1;
+         // // 10、number为全局变量的值 4
+         // alert(number);
+         // // 11、调用fn1函数
+         // fn1(); //15、调用返回数字 9
+         // // 16、obj调用fn1函数
+         // obj.fn1(); // 20、调用返回数字 27
+         // // 21、obj调用fn2函数
+         // obj.fn2();
+         // alert(window.number); //8
+         // alert(obj.number);  //16
+
+         // 19.程序有1行控制台输出，试写出。
+         // function Fun() {
+         //    this.a = 5;
+         //    function fun() {
+         //       this.a = 10;
+         //    }
+         //    fun.a = 15;
+         //    return fun;
+         // }
+         // var o = new (new Fun())();
+         // console.log(o.a);   
+
+         // 21.程序有1行控制台输出，试写出。
+
+         // var arr = [2,14,5,21,34,7,10];
+         // arr.sort(function(a,b){
+         //    return b - a;
+         // })
+         // console.log(arr);
+
+         // 封装一个函数，功能是完成数组去重，写出一种方法即可
+         // var arr = [1,2,2,2,3,4,5,5,6,6];
+         // function fn(dom){
+         //    for(var i=0;i<dom.length;i++){
+         //       if(dom[i] === dom[i+1]){
+         //          arr.splice(i+1,1);
+         //          i--
+         //       }
+         //    }
+         // }
+         // fn(arr);
+
+         // 请编写代码阻止页面上鼠标右键弹出默认菜单
+         // function stop() {
+         //    return false;
+         // }
+         // document.oncontextmenu = stop;
+
+         // 封装函数，功能获取一个随机颜色值
+         // var box = document.querySelector(".box");
+         // // console.log(box);
+         // function color(dom){
+         //    var res = parseInt(Math.random() * 256);
+         //    dom.style.background = "rgb(res,res,res)";
+         //    console.log(res);
+         // }
+         // color(box);
+
+         // function color(){
+         //    var red = parseInt(Math.random() * 256);
+         //    var green = parseInt(Math.random() * 256);
+         //    var blue = parseInt(Math.random() * 256);
+         //    return 'rgb('+ red +','+ green +','+ blue +')'
+         // }
+         // document.body.style.background = color()
+
+         // var t = 0 || 5;
+         // console.log(t);
+
+         // var date = new Date(2016, 12, 11);
+         // document.write(date.getFullYear() + " ");
+         // document.write(date.getMonth());
+         function fn3(num) {
+            this.a = num;
+            fn4(this);
+         }
+         function fn4(obj) {
+            obj.b = 10;
+            obj.c = 20;
+         }
+         var obj1 = {};
+         fn3.call(obj1, 10);
+         console.log(obj1);
+   </script>
+</body>
+
+</html>
